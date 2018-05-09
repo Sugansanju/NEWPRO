@@ -1,8 +1,7 @@
 <template>
  <div>
-
-     <div class="bgtint"></div>
-     <section class="bussinesscard">
+     <div class="bgtinit"></div>
+     <section class="bussinesscard `p-3">
      		<div class="flip">
      			<div class="front">
      				<div class="top">
@@ -30,12 +29,14 @@
      					</div>
      				</div>
      			</div>
-     			<div class="back"></div> <!--FIXES FONT RENDERING -->
+     			<div class="back">
+                </div>
      		</div>
      	</section>
      	<section class="tooltip">
      	</section>
-        <div class="modal fade" id="Model-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <!-- <Modal-1> -->
+        <div class="modal fade w3-animate-zoom" id="Model-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -58,15 +59,13 @@
                   </span>
                    Username
                </label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email" required>
             </div>
             <div class="form-group">
               <label for="psw">
-                  <span class="glyphicon glyphicon-eye-open">
-                  </span>
                   Password
               </label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" id="psw" placeholder="Enter password" required>
             </div>
             <div class="checkbox">
               <label>
@@ -91,45 +90,109 @@
 </div>
 
 <!-- Model-2 -->
-<div class="modal fade w3-animate-zoom" id="Model-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Second</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="modal fade w3-animate-zoom" data-validation="true" data-validation-event="submit" id="Model-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+                <h4 style="color:red;">
+                         Register
+                      </h4>
+                  </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="name">
+                     Name
+                 </label>
+                <input type="text" class="form-control" id="email" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="email">
+                     Email
+                 </label>
+                <input type="text" class="form-control" id="usrname" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="Phone number">
+                    Phone number
+                 </label>
+                <input type="text" class="form-control" id="usrname" placeholder="Enter email" required>
+              </div>
+              <div class="form-group ">
+                  <div class="radio gender">
+                      <label for="gender" class="title">Gender:</label>
+                      <label class="radio-inline">
+                          <input type="radio" name="inlineRadioOptions"  value="Male" class="option-input userGender" checked>
+                          <span>Male</span>
+                      </label>
+               <label class="radio-inline">
+             <input type="radio" name="inlineRadioOptions" value="Female" class="option-input userGender">
+             <span>Female</span>
+           </label>
+         </div>
+          </div>
+         <div class="form-group">
+                <label for="psw">
+                    Password
+                </label>
+                <input type="text" class="form-control" id="psw" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                   <label for="psw">
+                      Confirm Password
+                   </label>
+                   <input type="text" class="form-control" id="psw" placeholder="Enter password">
+               </div>
+              <button type="submit" class="btn btn-default btn-success btn-block">
+                  Register
+               </button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-1" data-dismiss="modal">Prev</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-3"data-dismiss="modal" >Next</button>
+        </div>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-1" data-dismiss="modal">Prev</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-3" data-dismiss="modal">Next</button>
-      </div>
+
     </div>
-  </div>
 </div>
-
-<!-- Model-3 -->
-<div class="modal fade" id="Model-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-2" data-dismiss="modal">Prev</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-1" data-dismiss="modal">Next</button>
-      </div>
+<!-- <Modal-3> -->
+<div class="modal fade w3-animate-zoom" data-validation="true" data-validation-event="submit" id="Model-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+                <h4 style="color:red;">
+                         OTP Verification
+                      </h4>
+                  </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+              <div class="form-group">
+                  <h3><b>Code</b>
+                  <input type="text" id="ex2">
+                  <progress-button name="fillColor" class="btn btn-success mr-1 mb-1" fill-color="	#008000">
+                     Verify
+                  </progress-button>
+              </h3>
+        </div>
     </div>
-  </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-2" data-dismiss="modal">Prev</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-1"data-dismiss="modal" >Next</button>
+        </div>
+      </div>
+
+    </div>
 </div>
     <!-- <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -208,40 +271,50 @@
 $('.container').on('click', function () {
   $('.card').toggleClass('flipped');
 });
+import Button from 'vue-progress-button'
+
+export default {
+  components: {
+    'progress-button': Button
+  }
+}
+// $('#datepicker').datepicker({
+//     uiLibrary: 'bootstrap4'
+// });
 </script>
 <style>
-/* @import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700);
+ /* @import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
-@import url(https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css); */
-::selection {
+@import url(https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css);
+ ::selection {
   color: #fff;
   background: #2a2b39;
 }
 
-::-moz-selection {
+ ::-moz-selection {
   color: #fff;
   background: #2a2b39;
 }
-.modal-backdrop {
+ .modal-backdrop {
   background-color:navy;
 }
-.modal-backdrop.show, .modal-backdrop.fade  {
+ .modal-backdrop.show, .modal-backdrop.fade  {
   opacity:0.5;
 }
-/* .modal.fade .modal-dialog {
+ .modal.fade .modal-dialog {
   transform:translate(-100%,0);
 }
 .modal.show .modal-dialog {
   transform:translate(0%,0%);
-} */
-.modal.fade .modal-dialog{
+}
+ .modal.fade .modal-dialog{
   transform:translate(0%,0%);
   transition-property:none;
 }
 .modal.fade .modal-dialog{
   animation:in ease-in 0.2s;
 }
-.out{
+ .out{
   animation:out ease-out 0.2s;
 }
 .modal.fade{
@@ -252,12 +325,12 @@ $('.container').on('click', function () {
 .modal-backdrop.show, .modal-backdrop.fade  {
   opacity:0.5;
 }
-/* .modal.fade .modal-dialog {
+.modal.fade .modal-dialog {
   transform:translate(-100%,0);
 }
 .modal.show .modal-dialog {
   transform:translate(0%,0%);
-} */
+}
 .modal.fade .modal-dialog{
   transform:translate(0%,0%);
   transition-property:none;
@@ -279,8 +352,9 @@ $('.container').on('click', function () {
 @keyframes out {
   from {transform:translate(0%,0);}
   to {transform:translate(-100%,0%);}
-}
-body{
+} */
+
+body,html{
   font-family: 'Raleway', sans-serif;
   background: url(https://unsplash.imgix.net/uploads/141310026617203b5980d/c86b8baa?q=75&fm=jpg&s=be8d1e8254844f53e56583bd49cf5e77);
   -webkit-background-size: cover;
@@ -293,11 +367,10 @@ body{
   overflow: hidden;
   z-index: 9;
 }
-
 .bgtint {
   position: absolute;
   height: 100%;
-  width: 100%;
+ width: 100%;
   background: rgba(42, 43, 57, 0.7);
 }
 
@@ -325,8 +398,9 @@ a:hover {
   height: 350px;
   width: 450px;
   overflow: hidden;
-  box-shadow: 0px 0px 43px -10px black;
-  position: absolute;
+  box-shadow: 0px 0px 53px -20px black;
+  position: relative;
+  margin-top: 300px;
   left: 50%;
   top: 50%;
   -moz-transform: translate(-50%, -50%);
