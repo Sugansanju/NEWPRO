@@ -14,16 +14,16 @@
      					<div class="introduction">A career is born in public-talent in privacy.</div>
      				</div>
      				<div class="contact">
-     					 <div class="website">
+     					 <div class="website mt-4">
      						 <i class="fa fa-user-secret icon"></i>
      					          <a  data-toggle="modal" href="#Model-1">Teacher
                                 </a>
      					</div>
-     					<div class="twitter">
+     					<div class="twitter mt-4">
                             <i class="fa fa-users icon"></i>
      						<a data-toggle="modal" href="#Model-1">Parent</a>
      					</div>
-     					<div class="phone">
+     					<div class="phone mt-4">
      						<i class="fa fa-mortar-board icon"></i>
      						<a data-toggle="modal" href="#Model-1">Student</a>
      					</div>
@@ -41,7 +41,7 @@
     <div class="modal-content">
       <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">
-              <h4 style="color:red;">
+              <h4 style="color:black;">
                         <span class="glyphicon glyphicon-lock">
                         </span>
                         Login
@@ -73,17 +73,17 @@
                   Remember me
               </label>
             </div>
-            <button type="submit" class="btn btn-default btn-success btn-block">
-                <span class="glyphicon glyphicon-off">
-                </span>
+            <div class="d-flex justify-content-center ">
+            <button type="submit" class="btn ">
                  Login
              </button>
+         </div>
           </form>
       </div>
       <div class="modal-footer">
-          <h5>New User?<i class="fa fa-hand-o-right" style="font-size:36px"></i></h5>
+          <h5>New User?<i class="fa fa-hand-o-right icon"></i></h5>
         <!-- <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-3" data-dismiss="modal">Prev</button> -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-2"data-dismiss="modal" >Next</button>
+        <button type="button" class="btn nextbtn" data-toggle="modal" data-target="#Model-2"data-dismiss="modal" >Next</button>
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@
       <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">
-                <h4 style="color:red;">
+                <h4>
                          Register
                       </h4>
                   </h5>
@@ -109,19 +109,19 @@
                 <label for="name">
                      Name
                  </label>
-                <input type="text" class="form-control" id="email" placeholder="Enter email" required>
+                <input type="text" class="form-control" id="name" placeholder="Name" required>
               </div>
               <div class="form-group">
                 <label for="email">
                      Email
                  </label>
-                <input type="text" class="form-control" id="usrname" placeholder="Enter email" required>
+                <input type="text" class="form-control" id="email" placeholder="Email" required>
               </div>
               <div class="form-group">
                 <label for="Phone number">
                     Phone number
                  </label>
-                <input type="text" class="form-control" id="usrname" placeholder="Enter email" required>
+                <input type="text" class="form-control" id="mobno" placeholder="Phone number" required>
               </div>
               <div class="form-group ">
                   <div class="radio gender">
@@ -140,13 +140,13 @@
                 <label for="psw">
                     Password
                 </label>
-                <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                <input type="text" class="form-control" id="pwd" >
             </div>
             <div class="form-group">
                    <label for="psw">
                       Confirm Password
                    </label>
-                   <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                   <input type="password" class="form-control" id="cpwd" >
                </div>
 <div class="form-group">
     <div>
@@ -154,14 +154,14 @@
      <datepicker placeholder="Select Date"></datepicker>
 </div>
 </div>
-  <button type="submit" class="btn btn-default btn-success btn-block">
+  <button type="submit" class="btn btn-default btn-block" @click="validate">
                   Register
                </button>
             </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-1" data-dismiss="modal">Prev</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-3"data-dismiss="modal" >Next</button>
+          <button type="button" class="btn nextbtn" data-toggle="modal" data-target="#Model-3"data-dismiss="modal" >Next</button>
         </div>
       </div>
 
@@ -173,8 +173,8 @@
       <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">
-                <h4 style="color:red;">
-                         OTP Verification
+                <h4>
+                     OTP Verification
                       </h4>
                   </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -186,7 +186,7 @@
                   <h3><b>Code</b></h3>
               <input type="text" placeholder="">
           </div>
-          <button type="button" class="button btn-primary" @click="btnclick" id="myButton1">send</button>
+          <button type="button" class="buttony" @click="btnclick" id="myButton1">Send</button>
                   <progress-button name="fillColor" class="bn btn-success mr-1 mb-1 mt-2" fill-color="#FF0000" @click="verify('verified')">
                      Verify
                   </progress-button>
@@ -194,7 +194,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-2" data-dismiss="modal">Prev</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-1"data-dismiss="modal" >Next</button>
+          <button type="button" class="btn nextbtn" data-toggle="modal" data-target="#Model-1"data-dismiss="modal" >Next</button>
         </div>
       </div>
 
@@ -207,19 +207,36 @@
 $('.container').on('click', function () {
   $('.card').toggleClass('flipped');
 });
-// $(document).ready(function() {
-//   $('.button').on('click', function() {
-//     var $this = $(this);
-//     var loadingText = '<i class="fa fa-circle-o-notch fa-spin"></i> loading...';
-//     if ($(this).html() !== loadingText) {
-//       $this.data('original-text', $(this).html());
-//       $this.html(loadingText);
-//     }
-//     setTimeout(function() {
-//       $this.html($this.data('original-text'));
-//     }, 2000);
-//   });
-// })
+$(document).ready(function() {
+  $('.button').on('click', function() {
+    var $this = $(this);
+    var loadingText = '<i class="fa fa-circle-o-notch fa-spin"></i> loading...';
+    if ($(this).html() !== loadingText) {
+      $this.data('original-text', $(this).html());
+      $this.html(loadingText);
+    }
+    setTimeout(function() {
+      $this.html($this.data('original-text'));
+    }, 2000);
+  });
+})
+function validate() {
+       var validator = $("#Modal-2").validate({
+           rules: {
+               password: "required",
+               confirmpassword: {
+                   equalTo: "#password"
+               }
+           },
+           messages: {
+               password: " Enter Password",
+               confirmpassword: " Enter Confirm Password Same as Password"
+           }
+       });
+       if (validator.form()) {
+           alert('Success');
+       }
+   }
 import Button from 'vue-progress-button';
 import Datepicker from 'vuejs-datepicker';
 export default {
@@ -232,17 +249,16 @@ methods:{
     {
         $('#myButton1').text("resend")
     }
+
 }
 }
+
 </script>
 <style>
-.m-body{
-     height:400px;
-      overflow-y:auto;
-}
+
 body,html{
-  font-family: 'Raleway', sans-serif;
-  background: url(https://unsplash.imgix.net/uploads/141310026617203b5980d/c86b8baa?q=75&fm=jpg&s=be8d1e8254844f53e56583bd49cf5e77);
+  font-family: 'Comic Sans MS', sans-serif;
+  background: url(https://wallpaper-house.com/data/out/8/wallpaper2you_230549.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -263,9 +279,6 @@ p {
   padding: 0;
   margin: 0;
   display: inline-block;
-}
-.icon{
-    color:#9ec649;
 }
 a {
   color: #315356;
@@ -304,7 +317,7 @@ a:hover {
   width: 100%;
   position: absolute;
   height: 100%;
-  background: #fff;
+  background: transprant;
   box-shadow: 0px 0px 33px -1px rgba(0, 0, 0, 0.45);
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -318,6 +331,7 @@ a:hover {
 .bussinesscard .front .top {
   height: 50%;
   background: #2a2b39;
+
 }
 .bussinesscard .front .top:after {
   position: absolute;
