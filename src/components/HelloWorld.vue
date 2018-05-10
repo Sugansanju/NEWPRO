@@ -103,7 +103,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body m-body">
             <form role="form">
               <div class="form-group">
                 <label for="name">
@@ -148,7 +148,13 @@
                    </label>
                    <input type="text" class="form-control" id="psw" placeholder="Enter password">
                </div>
-              <button type="submit" class="btn btn-default btn-success btn-block">
+<div class="form-group">
+    <div>
+    <label for="date">DOB</label>
+     <datepicker placeholder="Select Date"></datepicker>
+</div>
+</div>
+  <button type="submit" class="btn btn-default btn-success btn-block">
                   Register
                </button>
             </form>
@@ -176,17 +182,17 @@
           </button>
         </div>
         <div class="modal-body">
-              <div class="form-group">
-                  <h3><b>Code</b>
-                  <input type="text" id="ex2">
-                  <progress-button name="fillColor" class="btn btn-success mr-1 mb-1" fill-color="	#008000">
+              <div class="">
+                  <h3><b>Code</b></h3>
+              <input type="text" placeholder="">
+          </div>
+          <button type="button" class="button btn-primary" @click="btnclick" id="myButton1">send</button>
+                  <progress-button name="fillColor" class="bn btn-success mr-1 mb-1 mt-2" fill-color="#FF0000" @click="verify('verified')">
                      Verify
                   </progress-button>
               </h3>
         </div>
-    </div>
         <div class="modal-footer">
-
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Model-2" data-dismiss="modal">Prev</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model-1"data-dismiss="modal" >Next</button>
         </div>
@@ -194,76 +200,6 @@
 
     </div>
 </div>
-    <!-- <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 style="color:red;">
-              <span class="glyphicon glyphicon-lock">
-              </span>
-              Login
-          </h4>
-           <button type="button" class="close" data-dismiss="modal">
-               &times;
-           </button>
-        </div>
-        <div class="modal-body">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname">
-                  <span class="glyphicon glyphicon-user">
-                  </span>
-                   Username
-               </label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="psw">
-                  <span class="glyphicon glyphicon-eye-open">
-                  </span>
-                  Password
-              </label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
-            </div>
-            <div class="checkbox">
-              <label>
-                  <input type="checkbox" value="" checked>
-                  Remember me
-              </label>
-            </div>
-            <button type="submit" class="btn btn-default btn-success btn-block">
-                <span class="glyphicon glyphicon-off">
-                </span>
-                 Login
-             </button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal">
-              <span class="glyphicon glyphicon-remove">
-              </span>
-               Cancel
-           </button>
-          <p>
-              Not a member?
-              <a href="#">
-                  Sign Up
-              </a>
-          </p>
-          <p>Forgot
-              <a href="#">
-                  Password?
-              </a>
-          </p>
-          <hr>
-           <p id="ab-body-text"></p>
-           <div id="ab-modal-visual"></div>
-             <a href="#" class="button" id="ab-modal-next">Next</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
     </div>
 </template>
 
@@ -271,89 +207,39 @@
 $('.container').on('click', function () {
   $('.card').toggleClass('flipped');
 });
-import Button from 'vue-progress-button'
-
+// $(document).ready(function() {
+//   $('.button').on('click', function() {
+//     var $this = $(this);
+//     var loadingText = '<i class="fa fa-circle-o-notch fa-spin"></i> loading...';
+//     if ($(this).html() !== loadingText) {
+//       $this.data('original-text', $(this).html());
+//       $this.html(loadingText);
+//     }
+//     setTimeout(function() {
+//       $this.html($this.data('original-text'));
+//     }, 2000);
+//   });
+// })
+import Button from 'vue-progress-button';
+import Datepicker from 'vuejs-datepicker';
 export default {
   components: {
-    'progress-button': Button
-  }
+    'progress-button': Button,
+    Datepicker
+},
+methods:{
+ btnclick()
+    {
+        $('#myButton1').text("resend")
+    }
 }
-// $('#datepicker').datepicker({
-//     uiLibrary: 'bootstrap4'
-// });
+}
 </script>
 <style>
- /* @import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
-@import url(https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css);
- ::selection {
-  color: #fff;
-  background: #2a2b39;
+.m-body{
+     height:400px;
+      overflow-y:auto;
 }
-
- ::-moz-selection {
-  color: #fff;
-  background: #2a2b39;
-}
- .modal-backdrop {
-  background-color:navy;
-}
- .modal-backdrop.show, .modal-backdrop.fade  {
-  opacity:0.5;
-}
- .modal.fade .modal-dialog {
-  transform:translate(-100%,0);
-}
-.modal.show .modal-dialog {
-  transform:translate(0%,0%);
-}
- .modal.fade .modal-dialog{
-  transform:translate(0%,0%);
-  transition-property:none;
-}
-.modal.fade .modal-dialog{
-  animation:in ease-in 0.2s;
-}
- .out{
-  animation:out ease-out 0.2s;
-}
-.modal.fade{
-  opacity:1;
-}.modal-backdrop {
-  background-color:#10E6Bc;
-}
-.modal-backdrop.show, .modal-backdrop.fade  {
-  opacity:0.5;
-}
-.modal.fade .modal-dialog {
-  transform:translate(-100%,0);
-}
-.modal.show .modal-dialog {
-  transform:translate(0%,0%);
-}
-.modal.fade .modal-dialog{
-  transform:translate(0%,0%);
-  transition-property:none;
-}
-.modal.fade .modal-dialog{
-  animation:in ease-in 0.2s;
-}
-.out{
-  animation:out ease-out 0.2s;
-}
-.modal.fade{
-  opacity:1;
-}
-
-@keyframes in {
-  from {transform:translate(100%,0);}
-  to {transform:translate(0%,0%);}
-}
-@keyframes out {
-  from {transform:translate(0%,0);}
-  to {transform:translate(-100%,0%);}
-} */
-
 body,html{
   font-family: 'Raleway', sans-serif;
   background: url(https://unsplash.imgix.net/uploads/141310026617203b5980d/c86b8baa?q=75&fm=jpg&s=be8d1e8254844f53e56583bd49cf5e77);
@@ -373,7 +259,6 @@ body,html{
  width: 100%;
   background: rgba(42, 43, 57, 0.7);
 }
-
 p {
   padding: 0;
   margin: 0;
